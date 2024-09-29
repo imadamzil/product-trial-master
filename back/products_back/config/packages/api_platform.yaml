@@ -1,0 +1,13 @@
+api_platform:
+    title: 'Alten shop API'
+    description: 'Documentation Api Alten shop'
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    swagger:
+        versions: [3]
+    collection:
+        pagination:
+            enabled: true
+            items_per_page: 10
+            maximum_items_per_page: 30 
+            client_items_per_page: true
