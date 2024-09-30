@@ -12,13 +12,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatCardModule} from '@angular/material/card'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ProductModalComponent } from './product-modal/product-modal.component'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio'; 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProductsComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
+    ProductModalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +43,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     MatBadgeModule,
     MatIconModule,
-  
+    MatCardModule,
+    FormsModule,
+    HttpClientModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatRadioModule,
 
   ],
   providers: [],

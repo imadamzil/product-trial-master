@@ -1,0 +1,74 @@
+.add-product-button {
+  display: block;
+  margin: 20px auto;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  max-width: 450px;
+  margin: 30px;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-actions {
+  top: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.add-to-cart-button {
+  display: block;
+  width: 90%;
+  padding: 10px;
+}
+
+.loading-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination label {
+  margin-left: 10px;
+}
+
+.items-per-page-input {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50px;
+  text-align: center;
+}
+
+.mat-snack-bar-container {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
