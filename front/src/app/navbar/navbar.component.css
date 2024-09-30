@@ -1,0 +1,24 @@
+.mat-toolbar {
+    background-color: cornflowerblue;
+    color: white;
+  }
+  
+  .mat-button {
+    color: white;
+    border: 0;
+  }
+  
+  .space {
+    flex: 1 1 auto;
+  }
+  
+  .mat-icon {
+    margin-right: 8px;
+  }
+  
+  .mat-badge-content {
+    background-color: red; /* Personnaliser la couleur du badge */
+    color: white;
+    font-weight: bold;
+  }
+  
