@@ -1,79 +1,78 @@
-# Consignes
+# Projet Product Trial Master
 
-- Vous êtes développeur front-end : vous devez réaliser les consignes décrites dans le chapitre [Front-end](#Front-end)
+Ce projet est un test KATA pour une application web de e-commerce développée avec Angular pour le front-end et Symfony pour le back-end. Il permet de gérer les produits, d'effectuer des opérations CRUD via une API construite avec **API Platform** et d'envoyer des messages de contact.
 
-- Vous êtes développeur back-end : vous devez réaliser les consignes décrites dans le chapitre [Back-end](#Back-end) (*)
+## Cloner le Projet
 
-- Vous êtes développeur full-stack : vous devez réaliser les consignes décrites dans le chapitre [Front-end](#Front-end) et le chapitre [Back-end](#Back-end) (*)
+Pour cloner ce projet, exécutez les commandes suivantes dans votre terminal :
 
-(*) Afin de tester votre API, veuillez proposer une stratégie de test appropriée.
+```bash
+git clone https://github.com/imadamzil/product-trial-master.git
+cd product-trial-master
 
-## Front-end
-
-Le site de e-commerce d'Alten a besoin de s'enrichir de nouvelles fonctionnalités.
-
-### Partie 1 : Shop
-
-- Afficher toutes les informations pertinentes d'un produit sur la liste
-- Permettre d'ajouter un produit au panier depuis la liste 
-- Permettre de supprimer un produit du panier
-- Afficher un badge indiquant la quantité de produits dans le panier
-- Permettre de visualiser la liste des produits qui composent le panier.
-
-### Partie 2
-
-- Créer un nouveau point de menu dans la barre latérale ("Contact")
-- Créer une page "Contact" affichant un formulaire
-- Le formulaire doit permettre de saisir son email, un message et de cliquer sur "Envoyer"
-- Email et message doivent être obligatoirement remplis, message doit être inférieur à 300 caractères.
-- Quand le message a été envoyé, afficher un message à l'utilisateur : "Demande de contact envoyée avec succès".
-
-### Bonus : 
-
-- Ajouter un système de pagination et/ou de filtrage sur la liste des produits
-- On doit pouvoir visualiser et ajuster la quantité des produits depuis la liste et depuis le panier 
-
-## Back-end
-
-Développer un back-end permettant la gestion de produits définis plus bas.
-Vous pouvez utiliser la technologie de votre choix parmi la liste suivante :
-
-- Node.js/Express
-- Java/Spring Boot
-- C#/.net Core
-- PHP/Symphony
-
-
-Le back-end doit gérer les API suivantes : 
-
-| Resource           | POST                  | GET                            | PATCH                                    | PUT | DELETE           |
-| ------------------ | --------------------- | ------------------------------ | ---------------------------------------- | --- | ---------------- |
-| **/products**      | Create a new product  | Retrieve all products          | X                                        | X   |     X            |
-| **/products/:id**  | X                     | Retrieve details for product 1 | Update details of product 1 if it exists | X   | Remove product 1 |
-
-Un produit a les caractéristiques suivantes : 
-
-``` typescript
-class Product {
-  id: number;
-  code: string;
-  name: string;
-  description: string;
-  image: string;
-  category: string;
-  price: number;
-  quantity: number;
-  internalReference: string;
-  shellId: number;
-  inventoryStatus: "INSTOCK" | "LOWSTOCK" | "OUTOFSTOCK";
-  rating: number;
-  createdAt: number;
-  updatedAt: number;
-}
 ```
+## Structure Projet
 
-Le back-end créé doit pouvoir gérer les produits dans une base de données SQL/NoSQL ou dans un fichier json.
+product-trial-master/
+├── front/  # Contient l'application Angular
+├── back/   # Contient l'application Symfony
 
-## Bonus
+## Installation et Configuration
 
-Vous pouvez ajouter des tests Postman ou Swagger pour valider votre API
+### Front-end (Angular)
+
+1. **Accéder au dossier `front`** :
+
+   ```bash
+   cd front
+   ```
+2. **Installer des dépendances** :
+
+   ```bash
+    npm install
+   ```
+
+3. **Démarer l'application** :
+
+   ```bash
+    ng serve
+   ```
+L'application sera alors disponible sur http://localhost:4200.
+ 
+### Back-end (Symfony)
+
+1. **Accéder au dossier `back`** :
+ ```bash
+   cd back
+   ```
+
+2. **Créer les conteneurs de l'application : Utilisez Docker pour créer les conteneurs nécessaires (Apache, PHP, PHPMyAdmin).** :
+ ```bash
+docker compose up -d
+
+   ```
+
+3. **Accéder au conteneur www_docker_symfony : Exécutez la commande suivante pour accéder au conteneur**
+ ```bash
+docker exec -it www_docker_symfony bash
+
+   ```
+
+4. **Installer les dépendances de l'application back**
+ ```bash
+ cd products_back
+composer install
+
+   ```
+5. **executez ces commandes**
+ ```bash
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate --no-interaction
+php bin/console doctrine:fixtures:load --no-interaction
+ 
+   ```
+   L'API sera alors disponible sur http://localhost:8787/api  (vous trouverez l'API documenté avec possibilité de tester)
+
+## Remarque
+
+En raison de contraintes de temps, ce test n'a pas pu être terminé dans son intégralité. Certaines fonctionnalités peuvent ne pas être pleinement implémentées ou testées. Votre compréhension est appréciée.
