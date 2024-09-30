@@ -1,12 +1,9 @@
 <mat-toolbar color="primary" class="atlen-menu">
-    <span>ALTEN SHOP</span>
-    <span class="space"></span>
-    <button mat-button routerLink="/products">Produits</button>
-    <button mat-button routerLink="/contact">Contact</button>
-    <button mat-button (click)="openCart()">
-      <mat-icon matBadge="{{ cartItemCount }}" matBadgeColor="warn" matBadgeOverlap="false">shopping_cart</mat-icon>
-    </button>
-  </mat-toolbar>
-  
-
-  
+  <span>ALTEN SHOP</span>
+  <span class="space"></span>
+  <button mat-button routerLink="/products">Produits</button>
+  <button mat-button routerLink="/contact">Contact</button>
+  <button mat-button (click)="openCart()">
+    <mat-icon matBadge="{{ cartItemCount }}" matBadgeColor="warn" matBadgeOverlap="false">shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>

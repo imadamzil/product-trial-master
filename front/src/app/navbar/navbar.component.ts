@@ -10,7 +10,6 @@ export class NavbarComponent {
   totalItems = 0;
 cartItemCount: any = 0;
 openCart() {
-throw new Error('Method not implemented.');
-}
+  console.log('Ouvrir le panier');}
 
 }
